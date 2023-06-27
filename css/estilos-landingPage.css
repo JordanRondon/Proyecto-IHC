@@ -10,6 +10,7 @@
 
 html, body {
     height: 100%;
+    background-repeat: no-repeat;
     background-image: radial-gradient(circle, #cded57, #abdb5b, #8cc85e, #71b460, #5aa05f, #4e915a, #438355, #3a744f, #346846, #2e5b3e, #285036, #22442e);
 }
 
