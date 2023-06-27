@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/estilos-Login.css">
-    <link rel="icon" href="img/iconoW.ico" type="Wilson-icon">
+    <link rel="icon" href="img/Sin-título-2.ico" type="Wilson-icon">
     <title>Login</title>
+    <script src="js/funcion-login.js"></script>
 </head>
 <body>
     <div class="contenedor">
@@ -21,14 +23,15 @@
                     <input type="password" class="caja-texto" placeholder="Contraseña" required="">
                     <label for="name" class="label">Contraseña</label>
                 </div>
-                <a class="btn-ingresar" href="#"><button>Ingresar</button></a><!--ingresar el link de la interfaz-->
+                <button onclick="abrirArchivo()">Ingresar</button>
+                
                 <p class="texto-recuperar-contrasenia">
                     <a href="#">¿Has olvidado tu contraseña?</a>
                 </p>
             </form>
         </div>
         <div class="imagen">
-            <img src="img/pollo-Logo-Login.png">
+            <img src="img/login/pollo-Logo-Login.png">
         </div>
     </div>
 
