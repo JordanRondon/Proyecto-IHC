@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollerias Wilson</title>
+    <link rel="stylesheet" href="css/estilos-dashboard.css">
+    <link rel="icon" href="img/Sin-título-2.ico" type="Wilson-icon">
+</head>
+<body>
+    <header>
+        
+        <div class="titulo2">
+        
+            <div class="botonmenu">
+                <label for="btn-menu">☰</label> 
+            </div>
+            
+            <div class="probando">
+                <label for="btn-menu2">Estadisticas</label>
+            </div>
+        </div>
+        
+    </header>
+    <div class="caja">
+        <section class="contenedor">
+            <canvas id="MiGrafico" width="500" height="400"></canvas>
+        </section>
+        <section class="contenedor">
+            <canvas id="MiGrafico2" width="500" height="400"></canvas>
+        </section>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script>
+        const ctx = document.getElementById('MiGrafico');
+        const MiGrafico = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+                datasets: [{
+                    label: "Gráfico de Ventas Semanal",
+                    backgroundColor: ['rgba(255,99,132,0.2)', 'rgba(54,162,235,0.2)', 'rgba(255,206,86,0.2)', 'rgba(75,192,192,0.2)', 'rgba(153,102,255,0.2)', 'rgba(255,159,64,0.2)', 'rgba(255,159,64,0.2)'],
+                    borderColor: ['rgba(255,99,132,1)', 'rgba(54,162,235,1)', 'rgba(255,206,86,1)', 'rgba(75,192,192,1)', 'rgba(153,102,255,1)', 'rgba(255,159,64,1)', 'rgba(255,159,64,1)'],
+                    data: [60, 34, 49, 30, 55, 85, 47],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        ticks: { color: 'white', beginAtZero: true }
+                    },
+                    x: {
+                        ticks: { color: 'white', beginAtZero: true }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('MiGrafico2');
+        const MiGrafico2 = new Chart(ctx2, {
+            type: "line",
+            data: {
+                labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+                datasets: [{
+                    label: "Gráfico Ingreso total Semanal",
+                    backgroundColor: ['rgba(255,99,132,0.2)', 'rgba(54,162,235,0.2)', 'rgba(255,206,86,0.2)', 'rgba(75,192,192,0.2)', 'rgba(153,102,255,0.2)', 'rgba(255,159,64,0.2)', 'rgba(255,159,64,0.2)'],
+                    borderColor: ['rgba(255,99,132,1)', 'rgba(54,162,235,1)', 'rgba(255,206,86,1)', 'rgba(75,192,192,1)', 'rgba(153,102,255,1)', 'rgba(255,159,64,1)', 'rgba(255,159,64,1)'],
+                    data: [4600, 2050, 2842, 1700, 3264, 5470, 2743]
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        ticks: { color: 'white', beginAtZero: true }
+                    },
+                    x: {
+                        ticks: { color: 'white', beginAtZero: true }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Función para redimensionar los gráficos cuando se cambia el tamaño de la ventana
+        function resizeCharts() {
+            MiGrafico.resize();
+            MiGrafico2.resize();
+        }
+
+        // Agregar la función de escucha del evento resize
+        window.addEventListener('resize', resizeCharts);
+    </script>
+    
+    <div class="capa"></div>
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <img src="img/navBar/2x1en_burros.png" >
+            <nav>
+                <a href="ventaproductos.html"><img src="https://cdn-icons-png.flaticon.com/512/107/107831.png">Venta de Productos</a>
+                <a href="registroproductos.html"><img src="img/navBar/registrar.png">Registrar Productos</a>
+                <a href="cocina.html"><img src="img/navBar/cocina.png">Pedidos Pendientes</a>
+                <a href="#"><img src="img/navBar/dashboard.png">Dashboard</a>
+                <a href="login.html"><img src="img/navBar/logout.png">Log Out</a>
+            </nav>
+            <label for="btn-menu">X</label>
+        </div>
+    </div>
+</body>
+</html>
